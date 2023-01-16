@@ -70,7 +70,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-  'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -79,7 +79,7 @@ if DEBUG:
         'debug_toolbar.middleware.DebugToolbarMiddleware',
     ]
 
-
+ROOT_URLCONF = 'ittakesavillage.urls'
 
 TEMPLATES = [
     {
@@ -97,6 +97,8 @@ TEMPLATES = [
         },
     },
 ]
+
+WSGI_APPLICATION = 'ittakesavillage.wsgi.application'
 
 
 # Database
