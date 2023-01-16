@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'TakesVillage'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BEABF0B7529645F48E1B696A5C1FFD02 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D1F2734F7D3B4E6D854D55C56DE163D0 }}
