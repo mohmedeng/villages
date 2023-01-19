@@ -110,7 +110,7 @@ DATABASES = {
         'NAME': 'village', 
         'USER': 'admin', 
         'PASSWORD': '123',
-        'HOST': 'containers-us-west-95.railway.app', 
+        'HOST': '172.17.2.142', 
         'PORT': '5432',
     }
 }
