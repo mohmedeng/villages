@@ -34,16 +34,16 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = env('DEBUG')
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://*.up.railway.app/', 'https://*.127.0.0.1']
 
-#if DEBUG:
-#    import socket  # only if you haven't already imported this
-#    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-#    INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
-#
+if DEBUG:
+    import socket  # only if you haven't already imported this
+    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+    INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
+
 
 # Application definition
 
@@ -109,12 +109,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         
-        'NAME': 'villages',
-        'USER': 'admin',
-        'PASSWORD': '123',
-        'HOST': 'https://takesvillage.azurewebsites.net',
+        'NAME': os.environ['DBNAME'],
+        'USER': os.environ['DBUSER'],
+        'PASSWORD': os.environ['DBPASS'],
+        'HOST': os.environ['DBHOST'] ,
         'PORT': '',
-    }
+}
 }
 
 # Password validation
