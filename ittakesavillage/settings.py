@@ -17,7 +17,7 @@ mimetypes.add_type("text/css", ".css", True)
 env = environ.Env(
     DEBUG=(bool, os.environ.get('DEBUG', False)),
     SECRET_KEY=(str, os.environ.get('SECRET_KEY', 'dsfqsdg4dfg7zdfg1qsd4gf')),
-    DATABASE_URL=(str, os.getenv('DATABASE_URL'))
+    # DATABASE_URL=(str, os.getenv('DATABASE_URL'))
 
 )
 
