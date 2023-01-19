@@ -104,14 +104,20 @@ WSGI_APPLICATION = 'ittakesavillage.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'village', 
+#         'USER': 'admin', 
+#         'PASSWORD': '123',
+#         'HOST': 'containers-us-west-95.railway.app', 
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'village', 
-        'USER': 'admin', 
-        'PASSWORD': '123',
-        'HOST': 'containers-us-west-95.railway.app', 
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
