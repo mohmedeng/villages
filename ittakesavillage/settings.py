@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import environ
 import os
 from pathlib import Path
-
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 env = environ.Env(
     DEBUG=(bool, os.environ.get('DEBUG', False)),
     SECRET_KEY=(str, os.environ.get('SECRET_KEY', 'dsfqsdg4dfg7zdfg1qsd4gf')),
@@ -111,7 +112,6 @@ DATABASES = {
         'NAME': os.environ['DBNAME'],
         'USER': os.environ['DBUSER'],
         'PASSWORD': os.environ['DBPASS'],
-        'HOST': os.environ['DBHOST'] ,
         'PORT': '',
 }
 }
