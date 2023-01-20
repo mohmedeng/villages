@@ -61,8 +61,7 @@ INSTALLED_APPS = [
 
 if DEBUG:
     INSTALLED_APPS += [
-        'debug_toolbar',
-        'villages'
+        'debug_toolbar'
     ]
 
 MIDDLEWARE = [
@@ -106,16 +105,9 @@ WSGI_APPLICATION = 'ittakesavillage.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        
-        'NAME': os.environ['DBNAME'],
-        'USER': os.environ['DBUSER'],
-        'PASSWORD': os.environ['DBPASS'],
-        'HOST': os.environ['DBHOST'] ,
-        'PORT': '',
+    'default': env.db(),
 }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -153,13 +145,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'website/static/')
-]
- 
+STATIC_ROOT = BASE_DIR / 'public'
+
 # Media
 MEDIA_ROOT = BASE_DIR / 'uploads/'
 MEDIA_URL = 'media/'

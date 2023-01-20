@@ -1,21 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const calendarEl = document.getElementById('calendar');
-    if (calendarEl !== null){
-        const eventsUrl = calendarEl.dataset.eventsUrl;
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'timeGridWeek',
-            themeSystem: 'bootstrap5',
-            height: "auto",
-            allDaySlot: false,
-            slotMinTime: '6:00',
-            slotMaxTime: '20:00',
-            nowIndicator: true,
-            events: eventsUrl,
-            headerToolbar: {
-                end: 'prev,next'
-            }
-        });
-        calendar.render();
-    }
-});
+window.addEventListener('load', function(){
 
+    const elements = document.querySelectorAll('select[multiple]');
+    elements.forEach((element, key, parent) => {
+        const placeholder = element.dataset.placeholder;
+        const choices = new Choices(element, {
+            removeItemButton: true,
+            placeholderValue: placeholder,
+        });
+    })
+
+})
