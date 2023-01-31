@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 env = environ.Env(
-    DEBUG=(bool, os.environ.get('DEBUG', False)),
+    DEBUG=(bool, os.environ.get('DEBUG', True)),
     SECRET_KEY=(str, os.environ.get('SECRET_KEY', 'dsfqsdg4dfg7zdfg1qsd4gf')),
     DATABASE_URL=(str, os.getenv('DATABASE_URL'))
 
